@@ -63,8 +63,8 @@ extension Data {
 
 	var hex: String {
 		var string = ""
-		enumerateBytes { pointer, count, _ in
-			for i in 0..<count {
+		enumerateBytes { pointer, offset, _ in
+			for i in offset..<pointer.count {
 				string += String(format: "%02x", pointer[i])
 			}
 		}
